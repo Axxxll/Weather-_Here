@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/Axxxll/Weather-_Here#readme",
   "dependencies": {
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "nedb": "^1.8.0",
+    "nodemon": "^2.0.20"
   }
 }
