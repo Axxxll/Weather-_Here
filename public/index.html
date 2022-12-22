@@ -1,19 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .div {
+            display: flex;
+            flex-direction: column;
+        }
+
+        canvas {
+            border: 1px solid #000000;
+        }
+
+        input {
+            width: 192px;
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+
+        button {
+            width: 200px;
+        }
+    </style>
 </head>
+
 <body>
     <h1>Hello World</h1>
     <p>Latitude: <span id="lat"></span>°</p>
     <p>Longitude: <span id="lon"></span>°</p>
-    <input type="text" id="input">
-    <button id="submitBtn">submit</button>
+    <div class="div">
+        <canvas  width="420" height="360"></canvas>
+        <input type="text" id="input">
+        <button id="submitBtn">submit</button>
+    </div>
     <a href="/list/list.html">View list</a>
 
     <script src="index.js"></script>
+    <script src="draw.js"></script>
 </body>
+
 </html>

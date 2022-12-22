@@ -28,5 +28,13 @@ app.post('/position', (req, res) => {
 })
 
 app.get('/logs', (req, res) =>{
-    res.json(database.getAllData())
+    database.find( {}, (err, responce) => {
+        if(err) {
+            res.end()
+            return
+        }
+        else {
+            res.json(responce)
+        }
+    })
 })

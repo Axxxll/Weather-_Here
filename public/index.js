@@ -10,8 +10,12 @@ navigator.geolocation.getCurrentPosition((position) => {
     submitBtn.addEventListener('click', async () => {
         if (document.getElementById('input').value) {
             const input = document.getElementById('input').value
+            const canvas = document.querySelector('canvas')
+            const drawing = canvas.toDataURL()
+            const c = canvas.getContext("2d")
+            c.clearRect(0, 0, canvas.width, canvas.height)
             document.getElementById('input').value = ''
-            const data = { lat, lon, input}
+            const data = { lat, lon, input, drawing}
             const options = {
                 method: 'POST',
                 headers: {
