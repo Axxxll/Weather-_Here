@@ -7,15 +7,9 @@ navigator.geolocation.getCurrentPosition((position) => {
     lat = position.coords.latitude
     lon = position.coords.longitude
     updateHtml()
+    getWeather(lat, lon)
     submitBtn.addEventListener('click', async () => {
-        if (document.getElementById('input').value) {
-            const input = document.getElementById('input').value
-            const canvas = document.querySelector('canvas')
-            const drawing = canvas.toDataURL()
-            const c = canvas.getContext("2d")
-            c.clearRect(0, 0, canvas.width, canvas.height)
-            document.getElementById('input').value = ''
-            const data = { lat, lon, input, drawing}
+            const data = { lat, lon}
             const options = {
                 method: 'POST',
                 headers: {
@@ -26,16 +20,18 @@ navigator.geolocation.getCurrentPosition((position) => {
             const responce = await fetch('/position', options)
             const res = await responce.json()
             console.log(res)
-        }
-        else {
-            alert('input fieled is empty')
-        }
     })
 })
 
 function updateHtml() {
     document.getElementById('lat').innerHTML = lat
     document.getElementById('lon').innerHTML = lon
+}
+
+async function getWeather(lat, lon) {
+    const api_url = `https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&appid=${api_key}&units=metric`
+    const responce = await fetch(api_url)
+    console.log(responce)
 }
 
 

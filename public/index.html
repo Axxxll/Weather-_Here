@@ -6,41 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        .div {
-            display: flex;
-            flex-direction: column;
-        }
-
-        canvas {
-            border: 1px solid #000000;
-        }
-
-        input {
-            width: 192px;
-            margin-top: 5px;
-            margin-bottom: 5px;
-        }
-
-        button {
-            width: 200px;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <h1>Hello World</h1>
+    <h1>The Weather Here</h1>
+    <a href="/list/list.html">View list</a>
     <p>Latitude: <span id="lat"></span>°</p>
     <p>Longitude: <span id="lon"></span>°</p>
-    <div class="div">
-        <canvas  width="420" height="360"></canvas>
-        <input type="text" id="input">
-        <button id="submitBtn">submit</button>
-    </div>
-    <a href="/list/list.html">View list</a>
+    <button id="submitBtn">Check in</button>
+    
 
     <script src="index.js"></script>
-    <script src="draw.js"></script>
 </body>
 
 </html>
