@@ -8,7 +8,7 @@ const database = new Datastore('database.db')
 
 database.loadDatabase()
 
-const port = procces.env.port || 5500
+const port = process.env.port || 5500
 
 app.listen(port, () => {
     console.log(`it is listening at http://localhost:${port}`)

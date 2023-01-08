@@ -35,5 +35,5 @@ async function onLoad() {
         marker.bindPopup(txt)
     }
 
-    map.setView([latestEntry.lat, latestEntry.lon], 10)
+    map.setView([latestEntry.lat, latestEntry.lon], 15)
 }
