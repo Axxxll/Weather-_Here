@@ -8,10 +8,10 @@ const database = new Datastore('database.db')
 
 database.loadDatabase()
 
-const port = process.env.port || 5500
+const port = process.env.PORT || 5500
 
 app.listen(port, () => {
-    console.log(`it is listening at http://localhost:${port}`)
+    console.log(`Starting server at http://localhost:${port}`)
 })
 
 app.use(express.static('public'))
