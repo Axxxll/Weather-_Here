@@ -1,6 +1,6 @@
 # Weather Here
 
-You can preview the app at: https://electric-purple-october.glitch.me/index.html
+## You can preview the app at: https://electric-purple-october.glitch.me/index.html
 
 To run locally:  
 Install the dependencies by typing ***npm i*** in the terminal  
