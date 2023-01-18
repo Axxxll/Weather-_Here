@@ -21,11 +21,10 @@ app.post('/position', (req, res) => {
     const data = req.body
     const timestamp = Date.now()
     let lat = data.lat
-    lat = lat.toString().slice(0, -1)
+    lat = lat.toString().slice(0, -2)
     let lon = data.lon
-    lon = lon.toString().slice(0, -1)
+    lon = lon.toString().slice(0, -2)
     data.timestamp = timestamp
-    console.log(lat)
     database.findOne({ "lat": Number(lat), "lon": Number(lon) }, (err, doc) => {
         if (doc) {
             database.update(doc, data)
