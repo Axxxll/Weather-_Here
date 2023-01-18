@@ -20,10 +20,13 @@ app.use(express.json())
 app.post('/position', (req, res) => {
     const data = req.body
     const timestamp = Date.now()
-    const lat = data.lat
-    const lon = data.lon
+    let lat = data.lat
+    lat = lat.toString().slice(0, -1)
+    let lon = data.lon
+    lon = lon.toString().slice(0, -1)
     data.timestamp = timestamp
-    database.findOne({ "lat": lat, "lon": lon }, (err, doc) => {
+    console.log(lat)
+    database.findOne({ "lat": Number(lat), "lon": Number(lon) }, (err, doc) => {
         if (doc) {
             database.update(doc, data)
         }
