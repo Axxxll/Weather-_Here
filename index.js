@@ -21,9 +21,9 @@ app.post('/position', (req, res) => {
     const data = req.body
     const timestamp = Date.now()
     let lat = data.lat
-    lat = lat.toString().slice(0, -2)
+    lat = lat.toString().slice(0, -3)
     let lon = data.lon
-    lon = lon.toString().slice(0, -2)
+    lon = lon.toString().slice(0, -3)
     data.timestamp = timestamp
     database.findOne({ "lat": Number(lat), "lon": Number(lon) }, (err, doc) => {
         if (doc) {
